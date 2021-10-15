@@ -29,6 +29,7 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "🌱Application to remind people to water their plants.🌱"
   }
 }
