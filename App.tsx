@@ -18,6 +18,22 @@ export default function App() {
       <StatusBar style="auto" />
     </View>
   );
+
+    return () => subscription.remove();
+
+    // async function notifications() {
+    //   await Notifications.cancelAllScheduledNotificationsAsync();
+
+    //   const data = await Notifications.getAllScheduledNotificationsAsync();
+    //   console.log("NOTIFICAÇÕES AGENDADAS #######");
+    //   console.log(data);
+    // }
+
+    // notifications();
+  }, []);
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
 }
 
 const styles = StyleSheet.create({
