@@ -23,7 +23,7 @@ Aplicativo para lhe ajudar a lembrar de cuidar de suas plantas de forma fácil d
 
 ## 🧪 Tecnologias
 
-- [ ] React NAtive
+- [ ] React Native
 - [ ] Typescript
 - [ ] Expo
 - [ ] Expo Local Notifications
