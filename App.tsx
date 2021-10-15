@@ -12,12 +12,18 @@ import {
 } from "@expo-google-fonts/jost";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  const [fontsLoaded] = useFonts({
+    Jost_400Regular,
+    Jost_600SemiBold,
+  });
+
+  useEffect(() => {
+    const subscription = Notifications.addNotificationReceivedListener(
+      async (notification) => {
+        const data = notification.request.content.data.plant as PlantProps;
+        console.log(data);
+      }
+    );
 
     return () => subscription.remove();
 
