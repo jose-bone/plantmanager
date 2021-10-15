@@ -20,6 +20,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.jbone.plantmanager",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
