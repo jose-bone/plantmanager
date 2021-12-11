@@ -18,7 +18,7 @@ Aplicativo para lhe ajudar a lembrar de cuidar de suas plantas de forma fácil d
 
 - [✔] Salva a identificação do usuário no próprio dispositivo;
 - [✔] Consome da API os dados e caraterísticas de cada planta;
-- [✔] Salva localmente a planta que o usuário possue;
+- [✔] Salva localmente a planta que o usuário possui;
 - [✔] Lembra o usuário quando regar e cuidar da plantinha de acordo com a frequência ideal das plantas que o usuário possui;
 
 ## 🧪 Tecnologias
@@ -70,9 +70,9 @@ export default api;
 - Commit suas mudanças: `git commit -m 'feat: My new feature'`
 - Push a sua branch: `git push origin my-feature`
 
-## 📝 Liçenca
+## 📝 Licença
 
-Este projeto está sob liçenca MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Este projeto está sob licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
 <div align="center">
   <small>Desenvolvido com 💜 por José Boné</small>
