@@ -18,7 +18,7 @@ import { PlantProps, savePlant } from "../libs/storage";
 
 import { Button } from "../components/Button";
 
-import waterdrop from "../assets/waterdrop.png";
+import waterDropImg from "../assets/waterdrop.png";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
@@ -57,17 +57,14 @@ export function PlantSave() {
         dateTimeNotification: selectedDateTime,
       });
 
-      navigation.navigate(
-        "Confirmation" as never,
-        {
-          title: "Tudo certo",
-          subtitle:
-            "Fique tranquilo que sempre vamos lembrar você de cuidar da sua plantinha com muito cuidado.",
-          buttomtitle: "Muito Obrigado :D",
-          icon: "hug",
-          nextScreen: "MyPlants",
-        } as never
-      );
+      navigation.navigate("Confirmation", {
+        title: "Tudo certo",
+        subtitle:
+          "Fique tranquilo que sempre vamos lembrar você de cuidar da sua plantinha com muito cuidado.",
+        buttonTitle: "Muito Obrigado :D",
+        icon: "hug",
+        nextScreen: "MyPlants",
+      });
     } catch {
       Alert.alert("Não foi possível salvar. 😢");
     }
@@ -87,7 +84,7 @@ export function PlantSave() {
 
         <View style={styles.controller}>
           <View style={styles.tipContainer}>
-            <Image source={waterdrop} style={styles.tipImage} />
+            <Image source={waterDropImg} style={styles.tipImage} />
             <Text style={styles.tipText}>{plant.water_tips}</Text>
           </View>
 

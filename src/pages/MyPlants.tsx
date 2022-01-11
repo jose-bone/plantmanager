@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, Image, FlatList, Alert } from "react-native";
-import { Header } from "../components/Header";
-import { PlantCardSecondary } from "../components/PlantCardSecondary";
-import { loadPlant, PlantProps, removePlant } from "../libs/storage";
+import { pt } from "date-fns/locale";
 import { formatDistance } from "date-fns";
-import { ptBR } from "date-fns/locale";
+
+import { loadPlant, PlantProps, removePlant } from "../libs/storage";
+
+import { PlantCardSecondary } from "../components/PlantCardSecondary";
+import { Header } from "../components/Header";
 import { Load } from "../components/Load";
 
-import waterdrop from "../assets/waterdrop.png";
+import waterDropImg from "../assets/waterdrop.png";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
@@ -45,7 +47,7 @@ export function MyPlants() {
       const nextTime = formatDistance(
         new Date(plantsStoraged[0].dateTimeNotification).getTime(),
         new Date().getTime(),
-        { locale: ptBR }
+        { locale: pt }
       );
 
       setNextWatered(
@@ -68,7 +70,7 @@ export function MyPlants() {
       <Header />
 
       <View style={styles.spotlight}>
-        <Image source={waterdrop} style={styles.spotlightImage} />
+        <Image source={waterDropImg} style={styles.spotlightImage} />
         <Text style={styles.spotlightText}>{nextWatered}</Text>
       </View>
 

@@ -19,7 +19,7 @@ export function Welcome() {
   const navigation = useNavigation();
 
   function handleStart() {
-    navigation.navigate("UserIdentification" as never);
+    navigation.navigate("UserIdentification");
   }
 
   return (

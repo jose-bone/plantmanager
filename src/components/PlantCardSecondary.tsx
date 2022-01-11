@@ -49,10 +49,9 @@ export const PlantCardSecondary = ({
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     width: "100%",
     paddingHorizontal: 10,
-    paddingVertica: 25,
+    paddingVertical: 25,
     borderRadius: 20,
     flexDirection: "row",
     alignItems: "center",
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   },
   timeLabel: {
     fontSize: 16,
-    fontFamily: fonts.heading,
+    fontFamily: fonts.text,
     color: colors.body_light,
   },
   time: {

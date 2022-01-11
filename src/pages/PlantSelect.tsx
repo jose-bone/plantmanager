@@ -6,13 +6,13 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native";
-import { EnvironmentButton } from "../components/EnvironmentButton";
+import { useNavigation } from "@react-navigation/core";
+import { PlantProps } from "../libs/storage";
 
+import { EnvironmentButton } from "../components/EnvironmentButton";
 import { Header } from "../components/Header";
 import { PlantCardPrimary } from "../components/PlantCardPrimary";
 import { Load } from "../components/Load";
-import { useNavigation } from "@react-navigation/core";
-import { PlantProps } from "../libs/storage";
 
 import api from "../services/api";
 import colors from "../styles/colors";
@@ -38,7 +38,7 @@ export function PlantSelect() {
   function handleEnvironmentSelected(environment: string) {
     setEnvironmentSelected(environment);
 
-    if (environment === "all") return setFilteredPlants(plants);
+    if (environment == "all") return setFilteredPlants(plants);
 
     const filtered = plants.filter((plant) =>
       plant.environments.includes(environment)
@@ -75,13 +75,13 @@ export function PlantSelect() {
   }
 
   function handlePlantSelect(plant: PlantProps) {
-    navigation.navigate("PlantSave" as never, { plant } as never);
+    navigation.navigate("PlantSave", { plant });
   }
 
   useEffect(() => {
     async function fetchEnvironment() {
       const { data } = await api.get(
-        "plants_environments?_sort=title&_order=asc"
+        "plants_environments?_sort=name&_order=asc"
       );
       setEnvironments([
         {

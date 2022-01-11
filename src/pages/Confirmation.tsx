@@ -10,7 +10,7 @@ import fonts from "../styles/fonts";
 interface Params {
   title: string;
   subtitle: string;
-  buttomtitle: string;
+  buttonTitle: string;
   icon: "smile" | "hug";
   nextScreen: string;
 }
@@ -24,11 +24,11 @@ export function Confirmation() {
   const navigation = useNavigation();
   const routes = useRoute();
 
-  const { title, subtitle, buttomtitle, icon, nextScreen } =
+  const { title, subtitle, buttonTitle, icon, nextScreen } =
     routes.params as Params;
 
   function handleMoveOn() {
-    navigation.navigate(nextScreen as never);
+    navigation.navigate(nextScreen);
   }
 
   return (
@@ -40,7 +40,7 @@ export function Confirmation() {
 
         <Text style={styles.subtitle}>{subtitle}</Text>
         <View style={styles.footer}>
-          <Button title={buttomtitle} onPress={handleMoveOn} />
+          <Button title={buttonTitle} onPress={handleMoveOn} />
         </View>
       </View>
     </SafeAreaView>

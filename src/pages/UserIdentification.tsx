@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   StyleSheet,
@@ -27,7 +26,7 @@ export function UserIdentification() {
 
   const navigation = useNavigation();
 
-  function hadleInputBlur() {
+  function handleInputBlur() {
     setIsFocused(false);
     setIsFilled(!!name);
   }
@@ -46,17 +45,14 @@ export function UserIdentification() {
 
     try {
       await AsyncStorage.setItem("@plantmanager:user", name);
-      navigation.navigate(
-        "Confirmation" as never,
-        {
-          title: "Prontinho",
-          subtitle:
-            "Agora vamos começar a cuidar das suas plantinhas com muito cuidado.",
-          buttomtitle: "Começar",
-          icon: "smile",
-          nextScreen: "PlantSelect",
-        } as never
-      );
+      navigation.navigate("Confirmation", {
+        title: "Prontinho",
+        subtitle:
+          "Agora vamos começar a cuidar das suas plantinhas com muito cuidado.",
+        buttonTitle: "Começar",
+        icon: "smile",
+        nextScreen: "PlantSelect",
+      });
     } catch {
       Alert.alert("Não foi possível salvar o seu nome. 😢");
     }
@@ -85,7 +81,7 @@ export function UserIdentification() {
                   (isFocused || isFilled) && { borderColor: colors.green },
                 ]}
                 placeholder="Digite um nome"
-                onBlur={hadleInputBlur}
+                onBlur={handleInputBlur}
                 onFocus={handleInputFocus}
                 onChangeText={handleInputChange}
               />
